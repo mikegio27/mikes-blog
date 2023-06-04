@@ -12,14 +12,13 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { Link } from "react-router-dom";
 
 import avatar from '../img/avatar.jpg';
 import DarkModeSwitch from './DarkModeSwitch';
 
-const pages = ['About Me', 'Projects', 'Blog'];
+const pages = ['About Me', 'Projects', 'Blog', 'Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
-
 
 
 export default function ResponsiveAppBar() {
@@ -62,7 +61,6 @@ export default function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -95,7 +93,9 @@ export default function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={(page) => {
+                  handleCloseNavMenu(page);
+                }}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -118,10 +118,10 @@ export default function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
+              <a href={page.toLowerCase().replace(' ', '-')} key={page}>
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -129,6 +129,7 @@ export default function ResponsiveAppBar() {
               >
                 {page}
               </Button>
+              </a>
             ))}
           </Box>
           <DarkModeSwitch />
@@ -167,3 +168,6 @@ export default function ResponsiveAppBar() {
     </AppBar>
   );
 }
+
+
+
