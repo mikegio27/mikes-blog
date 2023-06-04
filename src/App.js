@@ -18,6 +18,7 @@ function App(props) {
     <div className="App">
       <Routes>
         <Route path="/" element={<Layout />} >
+          <Route path="/" element={<About />} />
           <Route path="about-me" element={<About />} />
           <Route path="projects" element={<Projects />} />
           <Route path="blog" element={<Blog />} />

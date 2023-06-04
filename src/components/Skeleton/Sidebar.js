@@ -1,4 +1,4 @@
-import Nav from "./Skeleton/Nav"
+import Nav from "./Nav"
 export default function Sidebar() {
     const sidebarStyle = {
         background: "azure",
