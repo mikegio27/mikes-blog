@@ -1,28 +1,31 @@
-import { Form } from "react-router-dom";
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 export default function Contact() {
 
     return (
-        <Form>
-            <div className="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" className="form-control" id="firstName" placeholder="First Name"></input>
-            </div>
-            <div className="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" className="form-control" id="lastName" placeholder="Last Name"></input>
-            </div>
-            <div className="form-group">
-                <label for="email">Email address</label>
-                <input type="email" className="form-control" id="email" placeholder="
-                Enter email"></input>
-            </div>
-            <div className="form-group">
-                <label for="message">Message</label>
-                <textarea className="form-control" id="message" rows="3"></textarea>
-            </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
-        </Form>
-    )
+        <Box
+            component="form"
+            sx={{
+                '& > :not(style)': { m: 1, width: '25ch' },
+            }}
+            noValidate
+            autoComplete="off"
+        >
+            <TextField id="outlined-basic" label="First Name" variant="outlined" />
+            <TextField id="filled-basic" label="Last Name" variant="filled" />
+            <TextField id="standard-basic" label="Email" variant="standard" />
+            <br />
+            <TextField
+                id="standard-multiline-static"
+                label="Message"
+                multiline
+                rows={6}
+                defaultValue="Say hi!"
+                variant="standard"
+            />
+        </Box>
+    );
 
 }
