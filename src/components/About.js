@@ -1,12 +1,11 @@
 import * as React from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
+
 import Container from '@mui/material/Container';
 
 
 export default function About() {
     return (
         <React.Fragment>
-            <CssBaseline />
             <Container maxWidth="sm">
                 <h1>About Me</h1>
                 <p>

@@ -53,12 +53,21 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 
 export default function DarkModeSwitch() {
+  const [darkMode, setDarkMode] = React.useState(false);
+  const darkModeHandler = () => {
+    if (darkMode) {
+      setDarkMode(false)
+    } else {
+      setDarkMode(true)
+    }
+  }
     return (
       <FormGroup>
         <FormControlLabel
-          control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-          label="Dark Mode"
+          control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked onClick={darkModeHandler} />}
+          label="darkMode"
         />
       </FormGroup>
     );
+
   }

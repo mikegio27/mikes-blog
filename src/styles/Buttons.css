@@ -1,0 +1,10 @@
+.myButtons {
+    orientation: "vertical";
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+    padding: 0 10px;
+}
